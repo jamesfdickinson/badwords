@@ -24,5 +24,8 @@ describe('filter', function(){
 		it('Should detect filtered words from badwords-list', function(){
 			assert(filter.isProfane('willies'));
 		});
+		it('Should detect wildcard filtered words from badwords-list', function(){
+			assert(filter.isProfane('CheatingAssBitch'));
+		});
 	});
 });
