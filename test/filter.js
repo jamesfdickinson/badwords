@@ -33,5 +33,7 @@ describe('filter', function(){
 			assert(filter.clean('what a bitch...fuck you') === 'what a *****...**** you');
 			assert(filter.clean('<p>Don\'t be an asshole</p>') === '<p>Don\'t be an *******</p>');
 		});
+
+
 	});
 });

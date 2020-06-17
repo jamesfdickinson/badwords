@@ -20,12 +20,11 @@ describe('filter', function(){
 		it('Filters out special characters appropriately', function() {
 			assert(filter.isProfane("You're an asshole^ you are"));
 		});
-
-		it('Should detect filtered words from badwords-list', function(){
-			assert(filter.isProfane('willies'));
-		});
 		it('Should detect wildcard filtered words from badwords-list', function(){
 			assert(filter.isProfane('CheatingAssBitch'));
 		});
+		// it('Should detect wildcard filtered words from badwords-list', function(){
+		// 	assert(filter.isProfane('kill yourself'));
+		// });
 	});
 });
