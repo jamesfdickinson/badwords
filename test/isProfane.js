@@ -23,8 +23,20 @@ describe('filter', function(){
 		it('Should detect wildcard filtered words from badwords-list', function(){
 			assert(filter.isProfane('CheatingAssBitch'));
 		});
-		// it('Should detect wildcard filtered words from badwords-list', function(){
-		// 	assert(filter.isProfane('kill yourself'));
-		// });
+		it('Should detect phrases from badwords-list', function(){
+		 	assert(filter.isProfane('kill yourself'));
+		});
+		it('Should detect spaces+number filtered words from badwords-list', function(){
+			assert(filter.isProfane('Hope she get C A N 3 R'));
+		});
+		it('Should detect spaces filtered words from badwords-list', function(){
+			assert(filter.isProfane('Cheating C U N T'));
+		});
+		it('Should detect spaces filtered words from badwords-list', function(){
+			assert(filter.isProfane('fuk u'));
+		});
+		it('Should detect wildcared words alone from badwords-list', function(){
+			assert(filter.isProfane('fuck u'));
+		});
 	});
 });
