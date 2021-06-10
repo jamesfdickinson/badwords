@@ -3,7 +3,7 @@ A javascript filter for badwords
 
 ## Installation
 ```
-npm install bad-words
+npm install bad-words-jd
 ```
 
 ## Usage
