@@ -35,6 +35,13 @@ describe('filter', function(){
 		it('Should detect spaces filtered words from badwords-list', function(){
 			assert(filter.isProfane('fuk u'));
 		});
+		it('Should detect spaces words alone from badwords-list', function(){
+			assert(filter.isProfane('Blow me'));
+		});
+		it('Should detect spaces words alone from badwords-list', function(){
+			assert(filter.isProfane('f u c k e r'));
+		});
+
 		it('Should detect wildcared words alone from badwords-list', function(){
 			assert(filter.isProfane('fuck u'));
 		});

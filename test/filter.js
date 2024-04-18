@@ -1,7 +1,7 @@
-require('assert');
-var Filter = require('../lib/badwords.js'),
-	filter = new Filter(),
-	assert = require('better-assert');
+
+var Filter = require('../lib/badwords.js');
+const	filter = new Filter();
+const	assert = require('assert');
 
 describe('filter', function(){
 	describe('clean',function(){
@@ -26,14 +26,17 @@ describe('filter', function(){
 			var customFilter = new Filter({
 				emptyList: true
 			});
-			assert(customFilter.clean('This is a hells good test') === 'This is a hells good test');
+			assert.equal(customFilter.clean('This is a hells good test') , 'This is a hells good test');
 		});
 
 		it('Should tokenize words according to regex word boundaries',function(){
-			assert(filter.clean('what a bitch...fuck you') === 'what a *****...**** you');
-			assert(filter.clean('<p>Don\'t be an asshole</p>') === '<p>Don\'t be an *******</p>');
+			assert.equal(filter.clean('what a bitch...fuck you') , 'what a *****...**** you');
+			assert.equal(filter.clean('<p>Don\'t be an asshole</p>'), '<p>Don\'t be an *******</p>');
 		});
 
-
+		it('Should detect spaces',function(){
+			assert.equal(filter.clean('what a f u c k e r'), 'what a ******');
+			assert.equal(filter.clean('<p>Don\'t Blow me</p>'), '<p>Don\'t ******</p>');
+		});
 	});
 });
