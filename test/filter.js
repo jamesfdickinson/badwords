@@ -38,5 +38,13 @@ describe('filter', function(){
 			assert.equal(filter.clean('what a f u c k e r'), 'what a ******');
 			assert.equal(filter.clean('<p>Don\'t Blow me</p>'), '<p>Don\'t ******</p>');
 		});
+		it('Should replace NOT replace part of the word', function(){
+			var customFilter = new Filter({list: ['hell']});
+			  assert.equal(customFilter.clean('This is a hells good test'), 'This is a hells good test');
+		});
+		it('Should replace full word with wildcard', function(){
+			var customFilter = new Filter({list: ['hell*']});
+			  assert.equal(customFilter.clean('This is a hells good test'), 'This is a ***** good test');
+		});
 	});
 });
