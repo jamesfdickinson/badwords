@@ -74,6 +74,7 @@ npm test
 - v1.4.1 / Sept 2 2016: Updated documentation.
 - v1.4.3 / Jan 21 2017: Add multilingual support for word filtering
 - v1.5.1 / April 14 2017: Patch for word tokenization.
+- v1.5.12 / April 18 2024: Support for words with spaces and wild card to end of word or start of word and bug fix for case sensitivity.
 
 
 ## License
