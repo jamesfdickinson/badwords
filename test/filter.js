@@ -42,6 +42,10 @@ describe('filter', function(){
 			var customFilter = new Filter({list: ['hell']});
 			  assert.equal(customFilter.clean('This is a hells good test'), 'This is a hells good test');
 		});
+		it('Should replace NOT replace part of the word 2 ', function(){
+			var customFilter = new Filter({list: ['ass']});
+			  assert.equal(customFilter.clean('This is a hass good test'), 'This is a hass good test');
+		});
 		it('Should replace full word with wildcard', function(){
 			var customFilter = new Filter({list: ['hell*']});
 			  assert.equal(customFilter.clean('This is a hells good test'), 'This is a ***** good test');
