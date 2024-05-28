@@ -50,5 +50,9 @@ describe('filter', function(){
 			var customFilter = new Filter({list: ['hell*']});
 			  assert.equal(customFilter.clean('This is a hells good test'), 'This is a ***** good test');
 		});
+		it('Should not replace snobby', function(){
+
+			  assert.equal(filter.clean('snobby'), 'snobby');
+		});
 	});
 });
