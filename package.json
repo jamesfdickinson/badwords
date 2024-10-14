@@ -1,13 +1,14 @@
 {
   "name": "bad-words-jd",
-  "version": "1.5.18",
+  "version": "1.5.19",
   "description": "A javascript filter for bad words",
   "main": "./lib/badwords",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "pub": "npm version patch --force && npm publish"
   },
   "repository": {
     "type": "git",
